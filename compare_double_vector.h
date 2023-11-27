@@ -23,6 +23,8 @@ vector<comparison*> init (vector<string>& names);
 
 void del(comparison* c);
 
+void del(vector<comparison*> vc);
+
 void vector_to_set(vector<string>& v, set<string>& s);
 
 bool vec_cmpr(vector<string>& v1, vector<string>& v2);

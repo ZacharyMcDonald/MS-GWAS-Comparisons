@@ -33,3 +33,7 @@ void fetch_data_driver(study* d);
 void fetch_data_driver(vector<study*>& vs);
 
 vector<comparison*> compare_double_vector_driver(vector<study*>& vs);
+
+void output_comparisons_csv(comparison* c);
+
+void output_comparisons_csv(vector<comparison*> vc);

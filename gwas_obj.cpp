@@ -39,6 +39,7 @@ void del(vector<study*>& vs)
 
 void fetch_data_driver(study* d)
 {
+    cout << "here" << endl;
     get_vec_of_rsid(d->all_rsids, d->rsid_input_fn);
     fetch_all_rsids(d->all_rsids, d->all_results, d->all_merged_rsids);
 }
@@ -61,7 +62,7 @@ vector<comparison*> compare_double_vector_driver(vector<study*>& vs)
     // loop over vector and make comparison of every value to every other value
     for (size_t i = 0; i < vs.size(); i++)
     {
-        for (size_t j = 0; i + 1 < vs.size(); j++)
+        for (size_t j = i + 1; j < vs.size(); j++)
         {
             // create name
             comp_name.clear();
@@ -80,5 +81,19 @@ vector<comparison*> compare_double_vector_driver(vector<study*>& vs)
     return vc;
 }
 
-// some more changes
+void output_comparisons_csv(comparison* c)
+{
+    string thisname = "output/" + c->name + "_overlap.csv";
+    save_matrix_as_csv(c->overlap, thisname);
+}
+
+void output_comparisons_csv(vector<comparison*> vc)
+{
+    // loop over comparisons
+    for (size_t i = 0; i < vc.size(); i++)
+    {
+        output_comparisons_csv(vc[i]);
+    }
+}
+
 // End of file

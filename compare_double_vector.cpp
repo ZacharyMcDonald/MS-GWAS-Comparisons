@@ -47,26 +47,14 @@ void vector_to_set(vector<string>& v, set<string>& s)
 
 bool vec_cmpr(vector<string>& v1, vector<string>& v2)
 {
-    // working with pointers to avoid copying
-    set<string> large_set;
-    vector<string>* small_vec;
-    
-    // use the larger vector to make set
-    if (v1.size() > v2.size())
-    {
-        vector_to_set(v1, large_set);
-        small_vec = &v2;
-    }
-    else
-    {
-        vector_to_set(v2, large_set);
-        small_vec = &v1;
-    }
+    set<string> s;
+
+    vector_to_set(v2, s);
 
     // iterate over the smaller vector and search in larger set. 
-    for (size_t i = 0; i < small_vec->size(); i++)
+    for (size_t i = 0; i < v1.size(); i++)
     {
-        if (large_set.find(small_vec->at(i)) != large_set.end())
+        if (s.find(v1.at(i)) != s.end())
         {
             return true;
         }
@@ -79,7 +67,7 @@ void matrix_cmpr(matrix& m1, matrix& m2, matrix& overlap, int& count)
 {
     for (size_t i = 0; i < m1.size(); i++)
     {
-        for (size_t j = 0; i < m2.size(); j++)
+        for (size_t j = 0; j < m2.size(); j++)
         {
             if ( vec_cmpr(m1[i], m2[j]) )
             {
