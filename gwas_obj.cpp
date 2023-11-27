@@ -79,3 +79,6 @@ vector<comparison*> compare_double_vector_driver(vector<study*>& vs)
     }
     return vc;
 }
+
+// some more changes
+// End of file
