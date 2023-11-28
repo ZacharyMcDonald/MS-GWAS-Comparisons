@@ -7,7 +7,7 @@ study* init(string& study_name, string& rsid_input_fn)
 
     d->study_name    = study_name;
     d->rsid_input_fn = rsid_input_fn;
-    d->count         = 0; 
+    //d->count         = 0; 
 
     return d;
 }
