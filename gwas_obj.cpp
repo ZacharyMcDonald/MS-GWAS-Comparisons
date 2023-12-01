@@ -14,6 +14,12 @@ study* init(string& study_name, string& rsid_input_fn)
 
 vector<study*> init(vector<string>& study_names, vector<string>& rsid_input_fns)
 {
+    if (study_names.size() != rsid_input_fns.size()) 
+    {
+        cerr << "***ERROR*** study_names and rsid_input_fns must have the same size" << endl;
+        return vector<study*>();
+    }
+        
     vector<study*> vs;
 
     for (size_t i = 0; i < study_names.size(); i++)
@@ -39,7 +45,6 @@ void del(vector<study*>& vs)
 
 void fetch_data_driver(study* d)
 {
-    cout << "here" << endl;
     get_vec_of_rsid(d->all_rsids, d->rsid_input_fn);
     fetch_all_rsids(d->all_rsids, d->all_results, d->all_merged_rsids);
 }

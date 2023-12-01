@@ -13,10 +13,8 @@ int main(int argc, char** argv)
 
     vector<string> file_names{"input/final_input/rsid_2007.csv", "input/final_input/rsid_2013.csv", "input/final_input/rsid_2019.csv"};
     
-    
     vector<study*> studies = init(study_names, file_names);
     
-    cout << "here1" << endl;
     fetch_data_driver(studies);
 
     vector<comparison*> comparisons = compare_double_vector_driver(studies);

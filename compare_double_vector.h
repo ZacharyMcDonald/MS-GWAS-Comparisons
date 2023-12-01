@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <map>
+//#include <map>
 #include <set>
 
 using namespace std;
@@ -41,5 +41,5 @@ void vector_to_set(vector<string>& v, set<string>& s);
 // Helper: takes two vectors and and compares to see if they have any matching values
 bool vec_cmpr(vector<string>& v1, vector<string>& v2);
 
-// Final function: compares to matrices and return which rows have matching values.
+// Final function: compares two matrices and return which rows have matching values.
 void matrix_cmpr(matrix& m1, matrix& m2, matrix& overlap, int& count);
