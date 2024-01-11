@@ -8,7 +8,7 @@ using namespace std;
 typedef vector<vector<string>> matrix;
 
 /*
- * Used to store the overlap between the two matrices. 
+ * Used to store the overlap between the two matrices (studies). 
 */
 typedef struct comparisons
 {
