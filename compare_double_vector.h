@@ -43,3 +43,5 @@ bool vec_cmpr(vector<string>& v1, vector<string>& v2);
 
 // Final function: compares two matrices and return which rows have matching values.
 void matrix_cmpr(matrix& m1, matrix& m2, matrix& overlap, int& count);
+
+// End of file

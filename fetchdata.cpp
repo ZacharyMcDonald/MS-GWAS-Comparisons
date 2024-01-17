@@ -45,7 +45,15 @@ void get_json_from_url(string& url, Json::Value& obj)
         }
 
         Json::Reader reader;
-        reader.parse(readBuffer, obj); 
+        
+        if (readBuffer.size() > 0)
+        {
+            reader.parse(readBuffer, obj); 
+        }
+        else
+        {
+            cerr << "Read Buffer is empty" << endl;
+        }
 
         if (attempts > 10)
         {
@@ -229,3 +237,5 @@ void progress_bar(float progress)
     }
     // cout << endl;
 }
+
+// End of file
