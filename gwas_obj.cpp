@@ -9,6 +9,8 @@ study* init(string& study_name, string& rsid_input_fn)
     d->rsid_input_fn = rsid_input_fn;
     //d->count         = 0; 
 
+    add_header(d->all_results);
+
     return d;
 }
 
@@ -47,6 +49,7 @@ void fetch_data_driver(study* d)
 {
     get_vec_of_rsid(d->all_rsids, d->rsid_input_fn);
     fetch_all_rsids(d->all_rsids, d->all_results, d->all_merged_rsids);
+    add_gene_length_to_results(d->all_results);
 }
 
 void fetch_data_driver(vector<study*>& vs)

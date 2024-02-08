@@ -8,6 +8,9 @@
 
 using namespace std;
 
+typedef vector<vector<string>> matrix;
+typedef vector<vector<vector<string>>> matrix3d;
+
 #define DEBUG true
 
-void get_gene_sequence(string& gene_name);
+void add_gene_length_to_results(matrix3d& r);

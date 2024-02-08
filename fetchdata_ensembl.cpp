@@ -10,11 +10,14 @@ static size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *use
 
 void create_ensembl_url(string& gene_name, string& url)
 {
+    // https://rest.ensembl.org/lookup/symbol/homo_sapiens/BRCA2?expand=1;content-type=application/json
     string urlA = "https://rest.ensembl.org/lookup/symbol/homo_sapiens/";
     string urlB = gene_name;
-    string urlC = "?content-type=application/json";
+    string urlC = "?expand=1;content-type=application/json";
 
     url = urlA + urlB + urlC;
+
+    if (DEBUG) cout << url << endl;
 }
 
 string get_gene_length(string& gene_name)
@@ -25,7 +28,9 @@ string get_gene_length(string& gene_name)
     Json::Value obj;
     get_json_from_url(url, obj);
 
-    return obj["Transcript"][0]["Length"].asString();
+    //cout << "gene length" << obj["Transcript"][0]["length"].asString() << endl;
+
+    return obj["Transcript"][0]["length"].asString();
 }
 
 void add_gene_length_to_results(matrix3d& r)
