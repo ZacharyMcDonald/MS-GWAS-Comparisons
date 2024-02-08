@@ -21,6 +21,8 @@ int main(int argc, char** argv)
 
     output_comparisons_csv(comparisons);
     
+    output_results_csv(studies);
+    
     del(studies);
     del(comparisons);
 
@@ -28,4 +30,4 @@ int main(int argc, char** argv)
     return 0;
 }
 
-// End of file
+// End of file`

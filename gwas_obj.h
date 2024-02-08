@@ -58,3 +58,7 @@ void output_comparisons_csv(comparison* c);
 
 // takes a vector of comparison objects and outputs them to many csv files.
 void output_comparisons_csv(vector<comparison*> vc);
+
+void output_results_csv(study* s);
+
+void output_results_csv(vector<study*> ss);

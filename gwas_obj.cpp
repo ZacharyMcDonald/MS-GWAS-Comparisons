@@ -101,4 +101,18 @@ void output_comparisons_csv(vector<comparison*> vc)
     }
 }
 
+void output_results_csv(study* s)
+{
+    string thisname = "output/" + s->study_name + "_results.csv";
+    save_matrix_as_csv(s->all_results, thisname);
+}
+
+void output_results_csv(vector<study*> ss)
+{
+    for (size_t i = 0; i < ss.size(); i++)
+    {
+        output_results_csv(ss[i]);
+    }
+}
+
 // End of file
