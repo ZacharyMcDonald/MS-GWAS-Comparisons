@@ -2,7 +2,7 @@ CC = g++
 CFLAGS = -g -std=c++11 -Wall
 JFLAGS = -lcurl -ljsoncpp
 DEBUG_RUN = gdb -q -ex run ./main.out
-OBJ_FILES = gwas_obj.o compare_double_vector.o myCSV.o fetchdata.o
+OBJ_FILES = gwas_obj.o compare_double_vector.o myCSV.o fetchdata_dbsnp.o
 
 
 main: ${OBJ_FILES}
@@ -22,9 +22,9 @@ myCSV.o: myCSV.cpp myCSV.h
 	rm -f myCSV.o
 	${CC} ${CFLAGS} -c myCSV.cpp
 
-fetchdata.o: fetchdata.cpp fetchdata.h
-	rm -f fetchdata.o
-	${CC} ${CFLAGS} -c fetchdata.cpp
+fetchdata.o: fetchdata_dbsnp.cpp fetchdata_dbsnp.h
+	rm -f fetchdata_dbsnp.o
+	${CC} ${CFLAGS} -c fetchdata_dbsnp.cpp
 
 clean: 
 	rm -f *.o *.gch main.out

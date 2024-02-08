@@ -1,4 +1,4 @@
-#include "fetchdata.h"
+#include "fetchdata_dbsnp.h"
 
 #define DEBUG true
 
@@ -24,7 +24,7 @@ void get_json_from_url(string& url, Json::Value& obj)
 {
     obj.clear();
 
-    CURL *curl;
+    CURL* curl;
     //CURLcode res;
 
     string readBuffer;

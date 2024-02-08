@@ -1,4 +1,4 @@
-#include "fetchdata.h"
+#include "fetchdata_dbsnp.h"
 #include "compare_double_vector.h"
 #include "myCSV.h"
 
