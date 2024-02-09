@@ -6,11 +6,11 @@
 #include <fstream>
 #include <curl/curl.h>
 
+#include "fetchdata_shared.h"
+
 using namespace std;
 
 typedef vector<vector<string>> matrix;
 typedef vector<vector<vector<string>>> matrix3d;
-
-#define DEBUG true
 
 void add_gene_length_to_results(matrix3d& r);

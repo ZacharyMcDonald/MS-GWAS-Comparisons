@@ -1,5 +1,6 @@
 #include "fetchdata_ensembl.h"
-#include "fetchdata_dbsnp.h"
+
+#define DEBUG true
 
 static size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *userp)
 {
@@ -28,7 +29,7 @@ string get_gene_length(string& gene_name)
     Json::Value obj;
     get_json_from_url(url, obj);
 
-    //cout << "gene length" << obj["Transcript"][0]["length"].asString() << endl;
+    if (DEBUG) cout << "gene length: " << obj["Transcript"][0]["length"].asString() << endl;
 
     return obj["Transcript"][0]["length"].asString();
 }
@@ -44,3 +45,5 @@ void add_gene_length_to_results(matrix3d& r)
         r[i].push_back( string_to_vec( get_gene_length(r[i][name_loc][0]) ) );
     }
 }
+
+#undef DEBUG
