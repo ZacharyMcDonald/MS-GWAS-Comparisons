@@ -59,7 +59,7 @@ void get_data_from_json(string& rsid, matrix3d& m3d, vector<string>& merged_rsid
     nvv.push_back(string_to_vec(obj["primary_snapshot_data"]["allele_annotations"][0]["assembly_annotation"][0]["genes"][0]["orientation"].asString()));
     nvv.push_back(string_to_vec(obj["primary_snapshot_data"]["allele_annotations"][0]["assembly_annotation"][0]["genes"][0]["rnas"][0]["sequence_ontology"][0]["name"].asString()));
     nvv.push_back(string_to_vec(obj["present_obs_movements"][0]["allele_in_cur_release"]["position"].asString()));
-    //nvv.push_back(string_to_vec(obj["primary_snapshot_data"]["allele_annotations"][0]["clinical"][0].asString()));
+    nvv.push_back(string_to_vec(obj["primary_snapshot_data"]["allele_annotations"][0]["clinical"][0].asString()));
 
 
     // add row vector to 3d matrix
@@ -108,7 +108,6 @@ void fetch_all_rsids(vector<string>& all_rsids, matrix3d& results, matrix& all_m
     // iterate over all rsids, create url, fetch data, and add data to results 
     // matrix
     for (size_t i = 0; i < all_rsids.size(); i++)
-    //for (size_t i = 0; i < 50; i++)
     {
         create_rsid_url(all_rsids[i], url);
         get_json_from_url(url, obj);

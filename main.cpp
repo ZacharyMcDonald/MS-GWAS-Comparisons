@@ -8,11 +8,11 @@ int main(int argc, char** argv)
 {
     cout << "Starting Program..." << endl;
     
-    vector<string> study_names{"s2007", "s2013", "s2019"};
-    vector<string> file_names{"input/rsid_2007.csv", "input/rsid_2013.csv", "input/rsid_2019.csv"};
+    //vector<string> study_names{"s2007", "s2013", "s2019"};
+    //vector<string> file_names{"input/rsid_2007.csv", "input/rsid_2013.csv", "input/rsid_2019.csv"};
 
-    //vector<string> study_names{"s2007", "s2013", "s2019", "s2007_2"};
-    //vector<string> file_names{"input/final_input/rsid_2007.csv", "input/final_input/rsid_2013.csv", "input/final_input/rsid_2019.csv", "input/final_input/2007_screened_replication.csv"};
+    vector<string> study_names{"s2007", "s2013", "s2019", "s2007_2"};
+    vector<string> file_names{"input/final_input/rsid_2007.csv", "input/final_input/rsid_2013.csv", "input/final_input/rsid_2019.csv", "input/final_input/2007_screened_replication.csv"};
     
     vector<study*> studies = init(study_names, file_names);
     
@@ -31,4 +31,4 @@ int main(int argc, char** argv)
     return 0;
 }
 
-// End of file`
+// End of file

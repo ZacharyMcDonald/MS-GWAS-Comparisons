@@ -2,13 +2,6 @@
 
 #define DEBUG true
 
-static size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *userp)
-{
-    ((string*)userp)->append((char*)contents, size * nmemb);
-    
-    return size * nmemb;
-}
-
 void create_ensembl_url(string& gene_name, string& url)
 {
     // https://rest.ensembl.org/lookup/symbol/homo_sapiens/BRCA2?expand=1;content-type=application/json
@@ -43,6 +36,8 @@ void add_gene_length_to_results(matrix3d& r)
     for (int i = 1; i < r.size(); i++)
     {
         r[i].push_back( string_to_vec( get_gene_length(r[i][name_loc][0]) ) );
+        
+        progress_bar(float(i) / float(r.size()));
     }
 }
 

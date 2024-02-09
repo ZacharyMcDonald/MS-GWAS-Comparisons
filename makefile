@@ -38,7 +38,7 @@ ${TF}fetchdata_ensembl.o: ${FD}fetchdata_ensembl.cpp ${FD}fetchdata_ensembl.h
 
 clean: 
 	rm -f *.o *.gch main.out
-	rm ${TF}*.o ${TF}*.gch
+	rm ${TF}*
 
 run:
 	./main.out
