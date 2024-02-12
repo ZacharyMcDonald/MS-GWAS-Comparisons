@@ -84,7 +84,7 @@ void get_json_from_url(string& url, Json::Value& obj)
             cerr << "Read Buffer is empty" << endl;
         }
 
-        if (attempts > 3)
+        if (attempts > 2)
         {
             cerr << "***ERROR*** Failed to retreive data from " << url << endl;
             break;

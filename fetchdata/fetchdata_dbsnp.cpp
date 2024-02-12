@@ -29,7 +29,8 @@ void get_data_from_json(string& rsid, matrix3d& m3d, vector<string>& merged_rsid
 
     if (obj.empty())
     {
-        nvv.push_back(string_to_vec("FAILED TO FETCH DATA"));
+        nvv.push_back(string_to_vec("FALSE"));
+        //m3d.push_back(nvv);
         return;
     }
 

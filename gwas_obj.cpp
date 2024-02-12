@@ -59,6 +59,7 @@ void fetch_data_driver(vector<study*>& vs)
     for (size_t i = 0; i < vs.size(); i++)
     {
         fetch_data_driver(vs[i]);
+        progress_bar(float(i) / float(vs.size()));
     }
 }
 
@@ -87,6 +88,7 @@ vector<comparison*> compare_double_vector_driver(vector<study*>& vs)
             // add results to vector of all comparisons
             vc.push_back(c);
         }
+        progress_bar(float(i) / float(vs.size()));
     }
     return vc;
 }
@@ -100,9 +102,11 @@ void output_csv(comparison* c)
 void output_csv(vector<comparison*> vc)
 {
     // loop over comparisons
+    cout << "Saving Comparisons..." << endl;
     for (size_t i = 0; i < vc.size(); i++)
     {
         output_csv(vc[i]);
+        progress_bar(float(i) / float(vc.size()));
     }
 }
 
@@ -114,9 +118,11 @@ void output_csv(study* s)
 
 void output_csv(vector<study*> ss)
 {
+    cout << "Saving Results..." << endl;
     for (size_t i = 0; i < ss.size(); i++)
     {
         output_csv(ss[i]);
+        progress_bar(float(i) / float(ss.size()));
     }
 }
 

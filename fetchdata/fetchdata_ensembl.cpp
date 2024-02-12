@@ -35,7 +35,7 @@ void add_gene_length_to_results(matrix3d& r)
 
     int name_loc = 4;
 
-    for (int i = 1; i < r.size(); i++)
+    for (size_t i = 1; i < r.size(); i++)
     {
         r[i].push_back( string_to_vec( get_gene_length(r[i][name_loc][0]) ) );
         
