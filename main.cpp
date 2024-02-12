@@ -15,11 +15,6 @@ int main(int argc, char** argv)
 {
     cout << "Starting Program..." << endl;
     
-    //vector<string> study_names{"s2007", "s2013", "s2019"};
-    //vector<string> file_names{"input/rsid_2007.csv", "input/rsid_2013.csv", "input/rsid_2019.csv"};
-
-    //vector<string> study_names{"s2007", "s2013", "s2019", "s2007_2"};
-    //vector<string> file_names{"input/final_input/rsid_2007.csv", "input/final_input/rsid_2013.csv", "input/final_input/rsid_2019.csv", "input/final_input/2007_screened_replication.csv"};
     vector<string> study_names;
     vector<string> file_names;
     
@@ -74,7 +69,7 @@ vector<string>& file_names)
         return false;
     }
 
-    for (int i = 0; i < in.size(); i++)
+    for (size_t i = 0; i < in.size(); i++)
     {
         study_names.push_back(in[i][0]);
         file_names.push_back(in[i][1]);

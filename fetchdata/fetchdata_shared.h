@@ -16,7 +16,7 @@ typedef std::vector<std::vector<std::vector<std::string>>> matrix3d;
 
 /*
  * Helper for get_json_from_url
-*/ static size_t WriteCallback(void* contents, size_t size, size_t nmemb, void *userp);
+*/ size_t WriteCallback(void* contents, size_t size, size_t nmemb, void *userp);
 
 /*
  * Helper funtion: takes std::string and returns a single value std::vector containing that
