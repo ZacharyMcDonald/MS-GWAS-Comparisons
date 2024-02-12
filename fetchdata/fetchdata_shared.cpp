@@ -1,5 +1,6 @@
-
 #include "fetchdata_shared.h"
+
+using namespace std;
 
 #define DEBUG false
 

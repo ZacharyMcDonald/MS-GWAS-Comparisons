@@ -1,5 +1,7 @@
 #include "gwas_obj.h"
 
+using namespace std;
+
 study* init(string& study_name, string& rsid_input_fn)
 {
     study* d;
@@ -89,32 +91,32 @@ vector<comparison*> compare_double_vector_driver(vector<study*>& vs)
     return vc;
 }
 
-void output_comparisons_csv(comparison* c)
+void output_csv(comparison* c)
 {
     string thisname = "output/" + c->name + "_overlap.csv";
     save_matrix_as_csv(c->overlap, thisname);
 }
 
-void output_comparisons_csv(vector<comparison*> vc)
+void output_csv(vector<comparison*> vc)
 {
     // loop over comparisons
     for (size_t i = 0; i < vc.size(); i++)
     {
-        output_comparisons_csv(vc[i]);
+        output_csv(vc[i]);
     }
 }
 
-void output_results_csv(study* s)
+void output_csv(study* s)
 {
     string thisname = "output/" + s->study_name + "_results.csv";
     save_matrix_as_csv(s->all_results, thisname);
 }
 
-void output_results_csv(vector<study*> ss)
+void output_csv(vector<study*> ss)
 {
     for (size_t i = 0; i < ss.size(); i++)
     {
-        output_results_csv(ss[i]);
+        output_csv(ss[i]);
     }
 }
 

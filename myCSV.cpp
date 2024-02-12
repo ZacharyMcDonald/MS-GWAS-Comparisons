@@ -1,5 +1,8 @@
 #include "myCSV.h"
 
+using namespace std;
+
+void parse_line(string& line, int& lineNumber, matrix& m);
 void read_file(string& fn, matrix& m)
 {
     fstream fin;

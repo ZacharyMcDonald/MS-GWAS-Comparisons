@@ -1,5 +1,7 @@
 #include "fetchdata_dbsnp.h"
 
+using namespace std;
+
 #define DEBUG true
 
 void create_rsid_url(string& rsid, string& rsidUrl)

@@ -1,5 +1,6 @@
 #include "compare_double_vector.h"
 
+using namespace std;
 
 comparison* init(string& name)
 {

@@ -1,5 +1,7 @@
 #include "fetchdata_ensembl.h"
 
+using namespace std;
+
 #define DEBUG true
 
 void create_ensembl_url(string& gene_name, string& url)
