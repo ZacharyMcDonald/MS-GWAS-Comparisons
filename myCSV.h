@@ -2,8 +2,7 @@
 #include <fstream>
 #include <vector>
 
-typedef std::vector<std::vector<std::string>> matrix;
-typedef std::vector<std::vector<std::vector<std::string>>> matrix3d;
+#include "matrix_typedef.h"
 
 /*
 * Functions for reading the csv to matrix. Results is a Matrix 

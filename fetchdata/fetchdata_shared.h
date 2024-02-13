@@ -7,8 +7,8 @@
 
 #include "../myCSV.h"
 
-typedef std::vector<std::vector<std::string>> matrix;
-typedef std::vector<std::vector<std::vector<std::string>>> matrix3d;
+// typedef std::vector<std::vector<std::string>> matrix;
+// typedef std::vector<std::vector<std::vector<std::string>>> matrix3d;
 
 /*
  * Takes url as std::string and returns a JSON object

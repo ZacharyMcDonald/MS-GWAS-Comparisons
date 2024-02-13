@@ -2,7 +2,7 @@
 #include <vector>
 #include <set>
 
-typedef std::vector<std::vector<std::string>> matrix;
+#include "matrix_typedef.h"
 
 /*
  * Used to store the overlap between the two matrices (studies). 
