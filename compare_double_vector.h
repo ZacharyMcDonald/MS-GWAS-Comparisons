@@ -24,7 +24,7 @@ typedef struct comparisons
 comparison* init(std::string& name);
 
 // creates a std::vector of new comparison objects 
-std::vector<comparison*> init (std::vector<std::string>& names);
+std::vector<comparison*> init(std::vector<std::string>& names);
 
 // deletes a comparison object 
 void del(comparison* c);
