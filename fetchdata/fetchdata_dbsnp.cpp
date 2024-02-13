@@ -2,7 +2,7 @@
 
 using namespace std;
 
-#define DEBUG true
+#define DEBUG false
 
 void create_rsid_url(string& rsid, string& rsidUrl)
 {

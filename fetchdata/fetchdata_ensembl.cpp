@@ -2,7 +2,7 @@
 
 using namespace std;
 
-#define DEBUG true
+#define DEBUG false
 
 void create_ensembl_url(string& gene_name, string& url)
 {

@@ -54,7 +54,6 @@ void get_json_from_url(string& url, Json::Value& obj)
     obj.clear();
 
     CURL* curl;
-    //CURLcode res;
 
     string readBuffer;
 
@@ -68,7 +67,6 @@ void get_json_from_url(string& url, Json::Value& obj)
             curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
             curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
             curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
-            //res = curl_easy_perform(curl);
             curl_easy_perform(curl);
             curl_easy_cleanup(curl);
         }
