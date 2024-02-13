@@ -83,7 +83,7 @@ vector<comparison*> compare_double_vector_driver(vector<study*>& vs)
             comparison* c = init(comp_name);
             
             // make comparison
-            matrix_cmpr(vs[i]->all_merged_rsids, vs[j]->all_merged_rsids, c->overlap, c->count);
+            matrix_cmpr(c, vs[i]->all_merged_rsids, vs[j]->all_merged_rsids);
 
             // add results to vector of all comparisons
             vc.push_back(c);

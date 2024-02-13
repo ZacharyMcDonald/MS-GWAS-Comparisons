@@ -27,10 +27,6 @@ typedef struct gwas_study
     // each row contains the original rsid and its merged rsids
     matrix all_merged_rsids;
 
-    //matrix overlap;
-
-    //int count;
-
 } study;
 
 // creates a new study object

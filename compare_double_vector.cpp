@@ -63,8 +63,7 @@ bool vec_cmpr(vector<string>& v1, vector<string>& v2)
     return false;
 }
 
-
-void matrix_cmpr(matrix& m1, matrix& m2, matrix& overlap, int& count)
+void matrix_cmpr(comparison* c, matrix& m1, matrix& m2)
 {
     for (size_t i = 0; i < m1.size(); i++)
     {
@@ -72,9 +71,9 @@ void matrix_cmpr(matrix& m1, matrix& m2, matrix& overlap, int& count)
         {
             if ( vec_cmpr(m1[i], m2[j]) )
             {
-                overlap.push_back(m1[i]);
-                overlap.push_back(m2[j]);
-                count++;
+                c->overlap.push_back(m1[i]);
+                c->overlap.push_back(m2[j]);
+                c->count++;
             }
         }
     }
