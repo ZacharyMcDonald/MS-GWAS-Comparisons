@@ -13,8 +13,7 @@ size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *userp)
 
 vector<string> string_to_vec(string s)
 {
-    vector<string> v;
-    v.push_back(s);
+    vector<string> v(1, s);
     return v;
 }
 
@@ -43,15 +42,13 @@ void progress_bar(float progress)
         }
         std::cout << "] " << int(progress * 100.0) << " %" << std::endl;
         std::cout.flush();
-        
-        //if (!DEBUG) printf("\033c");
     }
-    // cout << endl;
 }
 
 void get_json_from_url(string& url, Json::Value& obj)
 {
-    sleep(0.1);
+    // prevents the server from being pinged too quickly
+    sleep(0.5);
 
     obj.clear();
 
