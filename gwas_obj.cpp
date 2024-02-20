@@ -52,6 +52,7 @@ void fetch_data_driver(study* d)
     get_vec_of_rsid(d->all_rsids, d->rsid_input_fn);
     fetch_all_rsids(d->all_rsids, d->all_results, d->all_merged_rsids);
     add_gene_length_to_results(d->all_results);
+    add_rsid_positions_to_results(d->all_results);
 }
 
 void fetch_data_driver(vector<study*>& vs)

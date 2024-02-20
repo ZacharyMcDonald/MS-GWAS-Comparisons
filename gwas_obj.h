@@ -1,5 +1,6 @@
 #include "fetchdata/fetchdata_dbsnp.h"
 #include "fetchdata/fetchdata_ensembl.h"
+#include "fetchdata/fetchdata_positions.h"
 #include "compare_double_vector.h"
 #include "myCSV.h"
 

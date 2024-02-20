@@ -51,6 +51,8 @@ void progress_bar(float progress)
 
 void get_json_from_url(string& url, Json::Value& obj)
 {
+    sleep(0.1);
+
     obj.clear();
 
     CURL* curl;

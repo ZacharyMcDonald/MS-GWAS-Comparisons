@@ -4,6 +4,7 @@
 
 #include <curl/curl.h>
 #include <jsoncpp/json/json.h>
+#include <unistd.h>
 
 #include "../myCSV.h"
 

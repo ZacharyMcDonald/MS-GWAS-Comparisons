@@ -5,7 +5,7 @@ DEBUG_RUN = gdb -q -ex run --args ./main.out file_names.csv
 OF = o_files/
 FD = fetchdata/
 
-OBJ_FILES = ${OF}gwas_obj.o ${OF}compare_double_vector.o ${OF}myCSV.o ${OF}fetchdata_dbsnp.o ${OF}fetchdata_ensembl.o ${OF}fetchdata_shared.o
+OBJ_FILES = ${OF}gwas_obj.o ${OF}compare_double_vector.o ${OF}myCSV.o ${OF}fetchdata_dbsnp.o ${OF}fetchdata_ensembl.o ${OF}fetchdata_shared.o ${OF}fetchdata_positions.o
 
 main: ${OBJ_FILES}
 	rm -f main.out
@@ -35,6 +35,10 @@ ${OF}fetchdata_dbsnp.o: ${FD}fetchdata_dbsnp.cpp ${FD}fetchdata_dbsnp.h
 ${OF}fetchdata_ensembl.o: ${FD}fetchdata_ensembl.cpp ${FD}fetchdata_ensembl.h
 	rm -f ${OF}fetchdata_ensembl.o
 	${CC} ${CFLAGS} -c ${FD}fetchdata_ensembl.cpp -o ${OF}fetchdata_ensembl.o
+
+${OF}fetchdata_positions.o: ${FD}fetchdata_positions.cpp ${FD}fetchdata_positions.h
+	rm -f ${OF}fetchdata_positions.o
+	${CC} ${CFLAGS} -c ${FD}fetchdata_positions.cpp -o ${OF}fetchdata_positions.o
 
 clean: 
 	rm -f *.o *.gch main.out
