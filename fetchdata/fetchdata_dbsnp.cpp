@@ -57,10 +57,22 @@ void get_data_from_json(string& rsid, matrix3d& m3d, vector<string>& merged_rsid
     nvv.push_back(revision_vec);
 
     // add data that does not have multiple data points
-    nvv.push_back(string_to_vec(obj["primary_snapshot_data"]["allele_annotations"][0]["assembly_annotation"][0]["genes"][0]["locus"].asString()));
-    nvv.push_back(string_to_vec(obj["primary_snapshot_data"]["allele_annotations"][0]["assembly_annotation"][0]["genes"][0]["name"].asString()));
-    nvv.push_back(string_to_vec(obj["primary_snapshot_data"]["allele_annotations"][0]["assembly_annotation"][0]["genes"][0]["orientation"].asString()));
-    nvv.push_back(string_to_vec(obj["primary_snapshot_data"]["allele_annotations"][0]["assembly_annotation"][0]["genes"][0]["rnas"][0]["sequence_ontology"][0]["name"].asString()));
+    size_t gene_size = obj["primary_snapshot_data"]["allele_annotations"][0]["assembly_annotation"][0]["genes"].size();
+    vector<string> locus_v, name_v, orientation_v, ontology_v;
+    
+    for (size_t i = 0; i < gene_size; i++)
+    {
+        locus_v.push_back(       obj["primary_snapshot_data"]["allele_annotations"][0]["assembly_annotation"][0]["genes"][int(i)]["locus"].asString()      );
+        name_v.push_back(        obj["primary_snapshot_data"]["allele_annotations"][0]["assembly_annotation"][0]["genes"][int(i)]["name"].asString()       );
+        orientation_v.push_back( obj["primary_snapshot_data"]["allele_annotations"][0]["assembly_annotation"][0]["genes"][int(i)]["orientation"].asString());
+        ontology_v.push_back(    obj["primary_snapshot_data"]["allele_annotations"][0]["assembly_annotation"][0]["genes"][int(i)]["rnas"][0]["sequence_ontology"][0]["name"].asString());
+    }
+    
+    nvv.push_back(locus_v);
+    nvv.push_back(name_v);
+    nvv.push_back(orientation_v);
+    nvv.push_back(ontology_v);
+    
     nvv.push_back(string_to_vec(obj["present_obs_movements"][0]["allele_in_cur_release"]["position"].asString()));
     nvv.push_back(string_to_vec(obj["primary_snapshot_data"]["allele_annotations"][0]["clinical"][0].asString()));
 

@@ -29,6 +29,18 @@ string get_gene_length(string& gene_name)
     return obj["Transcript"][0]["length"].asString();
 }
 
+vector<string> get_gene_length(vector<string>& gene_length)
+{
+    vector<string> all_gene_lengths;
+
+    for (size_t i = 0; i < gene_length.size(); i++)
+    {
+        all_gene_lengths.push_back( get_gene_length(gene_length[i]) );
+    }
+
+    return all_gene_lengths;
+}
+
 void add_gene_length_to_results(matrix3d& r)
 {
     r[0].push_back(string_to_vec("Gene Length"));
@@ -37,7 +49,7 @@ void add_gene_length_to_results(matrix3d& r)
 
     for (size_t i = 1; i < r.size(); i++)
     {
-        r[i].push_back( string_to_vec( get_gene_length(r[i][name_loc][0]) ) );
+        r[i].push_back( get_gene_length(r[i][name_loc]) );
         
         progress_bar(float(i) / float(r.size()));
     }

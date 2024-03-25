@@ -45,6 +45,24 @@ void progress_bar(float progress)
     }
 }
 
+bool save_errors (string& ERR)
+{
+    cerr << ERR << endl;
+    
+    ofstream output;
+    output.open("output/errors.txt", ios::app);
+
+    if (!output)
+    {
+        return false;
+    }
+
+    output << ERR << endl;
+    output.close();
+
+    return true;
+}
+
 void get_json_from_url(string& url, Json::Value& obj)
 {
     // prevents the server from being pinged too quickly
@@ -78,12 +96,22 @@ void get_json_from_url(string& url, Json::Value& obj)
         }
         else
         {
-            cerr << "Read Buffer is empty" << endl;
+            string err = "Read Buffer is empty: " + url;
+            if (!save_errors(err))
+            {
+                cerr << "Failed to open error file" << endl;
+            }
+        }
+
+        if (attempts > 1)
+        {
+            sleep(10);
         }
 
         if (attempts > 2)
         {
-            cerr << "***ERROR*** Failed to retreive data from " << url << endl;
+            string err = "***ERROR*** Failed to retreive data from " + url;
+            save_errors(err);
             break;
         }
         attempts++;

@@ -1,0 +1,18 @@
+***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=rs9989735&rettype=json&retmode=text
+***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=none&rettype=json&retmode=text
+***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=rs12296430&rettype=json&retmode=text
+***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=rs4794058&rettype=json&retmode=text
+***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=rs71329256&rettype=json&retmode=text
+***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=rs146566517&rettype=json&retmode=text
+***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=SNP_A-1919293&rettype=json&retmode=text
+***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id= rs914148&rettype=json&retmode=text
+***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=none&rettype=json&retmode=text
+***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=rs72928038&rettype=json&retmode=text
+***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=rs2236262&rettype=json&retmode=text
+Read Buffer is empty: https://rest.ensembl.org/lookup/symbol/homo_sapiens/IL7R?expand=1;content-type=application/json
+***ERROR*** Failed to retreive data from https://rest.ensembl.org/variation/human/rs7536563?expand=1;content-type=application/json
+***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=rs2163226&rettype=json&retmode=text
+***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=rs666930&rettype=json&retmode=text
+***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=rs4679081&rettype=json&retmode=text
+***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=none&rettype=json&retmode=text
+***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=rs2688608&rettype=json&retmode=text
