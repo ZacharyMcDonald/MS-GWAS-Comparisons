@@ -2,7 +2,7 @@
 
 using namespace std;
 
-#define DEBUG false
+#define DEBUG true
 
 void create_ensembl_url(string& gene_name, string& url)
 {
@@ -21,21 +21,36 @@ string get_gene_length(string& gene_name)
     string url;
     create_ensembl_url(gene_name, url);
 
-    Json::Value obj;
-    get_json_from_url(url, obj);
+    int length = 0, trys = 0;
+    while (true)
+    {
+        Json::Value obj;
+        get_json_from_url(url, obj);
 
-    if (DEBUG) cout << "gene length: " << obj["Transcript"][0]["length"].asString() << endl;
+        length = obj["end"].asInt() - obj["start"].asInt();
+        trys++;
+        
+        if (length != 0 || trys >= 10)
+        {
+            break;
+        }
+        
+        if (DEBUG) cout << "gene length: " << length << endl;
+    }
+    
+    
+    if (DEBUG) cout << "gene length: " << length << endl;
 
-    return obj["Transcript"][0]["length"].asString();
+    return to_string(length);
 }
 
-vector<string> get_gene_length(vector<string>& gene_length)
+vector<string> get_gene_length(vector<string>& gene)
 {
     vector<string> all_gene_lengths;
 
-    for (size_t i = 0; i < gene_length.size(); i++)
+    for (size_t i = 0; i < gene.size(); i++)
     {
-        all_gene_lengths.push_back( get_gene_length(gene_length[i]) );
+        all_gene_lengths.push_back( get_gene_length(gene[i]) );
     }
 
     return all_gene_lengths;

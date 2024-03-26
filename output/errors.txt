@@ -16,3 +16,24 @@ Read Buffer is empty: https://rest.ensembl.org/lookup/symbol/homo_sapiens/IL7R?e
 ***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=rs4679081&rettype=json&retmode=text
 ***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=none&rettype=json&retmode=text
 ***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=rs2688608&rettype=json&retmode=text
+***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=rs1359062&rettype=json&retmode=text
+***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=rs55838263&rettype=json&retmode=text
+***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=none&rettype=json&retmode=text
+Read Buffer is empty: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=rs71329256&rettype=json&retmode=text
+Read Buffer is empty: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=rs71329256&rettype=json&retmode=text
+Read Buffer is empty: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=rs71329256&rettype=json&retmode=text
+Read Buffer is empty: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=rs71329256&rettype=json&retmode=text
+***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=rs71329256&rettype=json&retmode=text
+***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=rs6680578&rettype=json&retmode=text
+Read Buffer is empty: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=SNP_A-1919293&rettype=json&retmode=text
+Read Buffer is empty: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=SNP_A-1919293&rettype=json&retmode=text
+Read Buffer is empty: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=SNP_A-1919293&rettype=json&retmode=text
+Read Buffer is empty: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=SNP_A-1919293&rettype=json&retmode=text
+***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=SNP_A-1919293&rettype=json&retmode=text
+***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=rs7068990&rettype=json&retmode=text
+Read Buffer is empty: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id= rs914148&rettype=json&retmode=text
+Read Buffer is empty: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id= rs914148&rettype=json&retmode=text
+Read Buffer is empty: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id= rs914148&rettype=json&retmode=text
+Read Buffer is empty: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id= rs914148&rettype=json&retmode=text
+***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id= rs914148&rettype=json&retmode=text
+Read Buffer is empty: https://grch37.rest.ensembl.org/variation/human/rs12232421?expand=1;content-type=application/json

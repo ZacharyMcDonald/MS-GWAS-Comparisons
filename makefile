@@ -1,7 +1,7 @@
 CC = g++
 CFLAGS = -g -std=c++11 -Wall
 JFLAGS = -lcurl -ljsoncpp 
-DEBUG_RUN = gdb -q -ex run --args ./main.out file_names.csv
+DEBUG_RUN = gdb -q -ex run --args ./main.out files.csv
 OF = o_files/
 FD = fetchdata/
 
