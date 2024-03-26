@@ -35,11 +35,17 @@ string get_gene_length(string& gene_name)
             break;
         }
         
-        if (DEBUG) cout << "gene length: " << length << endl;
+        if (DEBUG)
+        {
+            string ERR = "gene name: " + gene_name
+                       + " gene length: " + to_string(length) + "\n";
+
+            cerr << ERR << endl;
+
+            string fn = "output/gene_length_errors.txt";
+            save_errors(ERR, fn);
+        }
     }
-    
-    
-    if (DEBUG) cout << "gene length: " << length << endl;
 
     return to_string(length);
 }

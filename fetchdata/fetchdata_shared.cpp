@@ -63,6 +63,24 @@ bool save_errors (string& ERR)
     return true;
 }
 
+bool save_errors (string& ERR, string& out_file)
+{
+    cerr << ERR << endl;
+    
+    ofstream output;
+    output.open(out_file, ios::app);
+
+    if (!output)
+    {
+        return false;
+    }
+
+    output << ERR << endl;
+    output.close();
+
+    return true;
+}
+
 void get_json_from_url(string& url, Json::Value& obj)
 {
     // prevents the server from being pinged too quickly

@@ -21,3 +21,5 @@
  * Prints a progress bar to cout. Takes a float of the ratio of progress; i.e. 
  * i / total. Use with a long loop.  
 */ void progress_bar(float progress);
+
+bool save_errors (string& ERR, string& out_file);
