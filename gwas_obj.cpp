@@ -60,7 +60,7 @@ void fetch_data_driver(vector<study*>& vs)
     for (size_t i = 0; i < vs.size(); i++)
     {
         fetch_data_driver(vs[i]);
-        progress_bar(float(i) / float(vs.size()));
+        progress_bar(float(i) / float(vs.size()), '%');
     }
 }
 
