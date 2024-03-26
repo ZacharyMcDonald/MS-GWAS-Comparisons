@@ -15,25 +15,8 @@ void create_rsid_url(string& rsid, string& rsidUrl)
     if (DEBUG) cout << rsidUrl << endl;
 }
 
-void get_data_from_json(string& rsid, matrix3d& m3d, vector<string>& merged_rsids, Json::Value& obj)
+void merged_rsids_helper(vector<vector<string>>& nvv, vector<string>& merged_rsids, Json::Value& obj)
 {
-    merged_rsids.push_back(rsid);
-    
-    // vector that only contains original rsid
-    vector<string> rsid_vec;
-    rsid_vec.push_back(rsid);
-
-    // new 2d vector. represents a new row with a third z direction 
-    vector<vector<string>> nvv;
-    nvv.push_back(rsid_vec);
-
-    if (obj.empty())
-    {
-        nvv.push_back(string_to_vec("FALSE"));
-        //m3d.push_back(nvv);
-        return;
-    }
-
     // vectors that will contain all merged data for that rsid
     vector<string> merged_rsid_vec;
     vector<string> merge_date_vec;
@@ -55,9 +38,12 @@ void get_data_from_json(string& rsid, matrix3d& m3d, vector<string>& merged_rsid
     nvv.push_back(merged_rsid_vec);
     nvv.push_back(merge_date_vec);
     nvv.push_back(revision_vec);
+}
 
-    // add data that does not have multiple data points
+void associated_genes_helper(vector<vector<string>>& nvv, Json::Value& obj)
+{
     size_t gene_size = obj["primary_snapshot_data"]["allele_annotations"][0]["assembly_annotation"][0]["genes"].size();
+    
     vector<string> locus_v, name_v, orientation_v, ontology_v;
     
     for (size_t i = 0; i < gene_size; i++)
@@ -72,10 +58,38 @@ void get_data_from_json(string& rsid, matrix3d& m3d, vector<string>& merged_rsid
     nvv.push_back(name_v);
     nvv.push_back(orientation_v);
     nvv.push_back(ontology_v);
-    
+}
+
+void other_bulk_data_helper(vector<vector<string>>& nvv, Json::Value& obj)
+{
     nvv.push_back(string_to_vec(obj["present_obs_movements"][0]["allele_in_cur_release"]["position"].asString()));
     nvv.push_back(string_to_vec(obj["primary_snapshot_data"]["allele_annotations"][0]["clinical"][0].asString()));
+}
 
+void get_data_from_json(string& rsid, matrix3d& m3d, vector<string>& merged_rsids, Json::Value& obj)
+{
+    merged_rsids.push_back(rsid);
+    
+    // vector that only contains original rsid
+    vector<string> rsid_vec;
+    rsid_vec.push_back(rsid);
+
+    // new 2d vector. represents a new row with a third z direction 
+    vector<vector<string>> nvv;
+    nvv.push_back(rsid_vec);
+
+    if (obj.empty())
+    {
+        nvv.push_back(string_to_vec("FALSE"));
+        //m3d.push_back(nvv);
+        return;
+    }
+
+    merged_rsids_helper(nvv, merged_rsids, obj);
+
+    associated_genes_helper(nvv, obj);
+    
+    other_bulk_data_helper(nvv, obj);
 
     // add row vector to 3d matrix
     m3d.push_back(nvv);

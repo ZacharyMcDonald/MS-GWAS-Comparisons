@@ -22,4 +22,4 @@
  * i / total. Use with a long loop.  
 */ void progress_bar(float progress);
 
-bool save_errors (string& ERR, string& out_file);
+bool save_errors (std::string& ERR, std::string& out_file);
