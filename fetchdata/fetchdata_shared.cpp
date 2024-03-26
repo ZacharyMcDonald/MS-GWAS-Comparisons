@@ -45,6 +45,34 @@ void progress_bar(float progress)
     }
 }
 
+void progress_bar(float progress, char symbol)
+{
+    if (progress < 1.0) 
+    {
+        int barWidth = 70;
+
+        std::cout << "[";
+        int pos = barWidth * progress;
+        
+        for (int i = 0; i < barWidth; ++i) 
+        {
+            if (i < pos)
+            { 
+                std::cout << symbol;
+                continue;
+            }
+            if (i == pos) 
+            {    
+                std::cout << ">";
+                continue;
+            }
+            std::cout << " ";
+        }
+        std::cout << "] " << int(progress * 100.0) << " %" << std::endl;
+        std::cout.flush();
+    }
+}
+
 bool save_errors (string& ERR)
 {
     cerr << ERR << endl;
