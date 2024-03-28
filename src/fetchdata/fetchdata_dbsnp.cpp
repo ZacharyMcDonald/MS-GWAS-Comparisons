@@ -66,9 +66,20 @@ void other_bulk_data_helper(vector<vector<string>>& nvv, Json::Value& obj)
     nvv.push_back(string_to_vec(obj["primary_snapshot_data"]["allele_annotations"][0]["clinical"][0].asString()));
 }
 
+string remove_rs_from_rsid(string& rsid)
+{
+    string buffer;
+    for (size_t i = 2; i < rsid.size(); i++)
+    {
+        buffer += rsid[i];
+    }
+    return buffer;
+}
+
 void get_data_from_json(string& rsid, matrix3d& m3d, vector<string>& merged_rsids, Json::Value& obj)
 {
-    merged_rsids.push_back(rsid);
+    
+    merged_rsids.push_back( remove_rs_from_rsid(rsid) );
     
     // vector that only contains original rsid
     vector<string> rsid_vec;
