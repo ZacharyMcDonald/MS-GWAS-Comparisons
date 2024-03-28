@@ -1,28 +1,30 @@
 CC = g++
 CFLAGS = -g -std=c++11 -Wall
 JFLAGS = -lcurl -ljsoncpp 
-DEBUG_RUN = gdb -q -ex run --args ./main.out files.csv
+DEBUG_RUN = gdb -q -ex run --args ./main.out input/final_files.csv
 OF = o_files/
-FD = fetchdata/
+SC = src/
+HD = ${SC}headers
+FD = ${SC}fetchdata/
 
 OBJ_FILES = ${OF}gwas_obj.o ${OF}compare_double_vector.o ${OF}myCSV.o ${OF}fetchdata_dbsnp.o ${OF}fetchdata_ensembl.o ${OF}fetchdata_shared.o ${OF}fetchdata_positions.o
 
 main: ${OBJ_FILES}
 	rm -f main.out
-	${CC} ${CFLAGS} main.cpp ${OBJ_FILES} ${JFLAGS} -o main.out 
+	${CC} ${CFLAGS} ${SC}main.cpp ${OBJ_FILES} ${JFLAGS} -o main.out 
 	${DEBUG_RUN}
 
-${OF}gwas_obj.o: gwas_obj.cpp gwas_obj.h
+${OF}gwas_obj.o: ${SC}gwas_obj.cpp ${SC}gwas_obj.h
 	rm -f ${OF}gwas_obj.o
-	${CC} ${CFLAGS} -c gwas_obj.cpp -o ${OF}gwas_obj.o
+	${CC} ${CFLAGS} -c ${SC}gwas_obj.cpp -o ${OF}gwas_obj.o
 
-${OF}compare_double_vector.o: compare_double_vector.cpp compare_double_vector.h
+${OF}compare_double_vector.o: ${SC}compare_double_vector.cpp ${SC}compare_double_vector.h
 	rm -f ${OF}compare_double_vector.o
-	${CC} ${CFLAGS} -c compare_double_vector.cpp -o ${OF}compare_double_vector.o
+	${CC} ${CFLAGS} -c ${SC}compare_double_vector.cpp -o ${OF}compare_double_vector.o
 
-${OF}myCSV.o: myCSV.cpp myCSV.h
+${OF}myCSV.o: ${SC}myCSV.cpp ${SC}myCSV.h
 	rm -f ${OF}myCSV.o
-	${CC} ${CFLAGS} -c myCSV.cpp -o ${OF}myCSV.o
+	${CC} ${CFLAGS} -c ${SC}myCSV.cpp -o ${OF}myCSV.o
 
 ${OF}fetchdata_shared.o: ${FD}fetchdata_shared.cpp ${FD}fetchdata_shared.h
 	rm -f ${OF}fetchdata_shared.o

@@ -1,0 +1,5 @@
+A list of RSIDs was extracted from each GWAS study and saved in unique CSV files. These files were the input for the program and were used to retrieve data from dbSNP and Ensembl. For each input RSID the following data was retrieved from dbSNP: Merged RSIDs (previous RSIDs), Merged Dates, Locus, Gene Name, Orientation, Sequence Ontology, and Clinical Significance. The gene length and RSID position were retrieved from Ensembl. 
+
+After retrieving the list of previous RSIDs for each RSID from all the input studies, a 2-dimensional matrix of RSIDs for each study was created. Then in pairs of two, every row of the RSID matrix (which represents a list the original RSID and its previous RSIDs) was compared with every row of the other RSID matrix; this was done for each study pair. The results of this algorithm are a thorough intersection of the input RSID lists. 
+
+Data from dbSNP was retrieved using the NCBI E-utilities API and data from Ensembl was retrieved using the Ensembl Rest API. All programming was done in C++, with URL compatibility handled through the libcurl API, and JSON parsing handled through the JsonCpp library.
