@@ -145,7 +145,7 @@ string vector_to_string(vector<string>& v)
             s += v[i][j];
         }
         
-        if (v.size() != i)
+        if (v.size() != i+1)
         {
             s += "; ";
         }
