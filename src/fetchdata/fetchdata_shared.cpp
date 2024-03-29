@@ -17,34 +17,6 @@ vector<string> string_to_vec(string s)
     return v;
 }
 
-void progress_bar(float progress)
-{
-    if (progress < 1.0) 
-    {
-        int barWidth = 70;
-
-        std::cout << "[";
-        int pos = barWidth * progress;
-        
-        for (int i = 0; i < barWidth; ++i) 
-        {
-            if (i < pos)
-            { 
-                std::cout << "=";
-                continue;
-            }
-            if (i == pos) 
-            {    
-                std::cout << ">";
-                continue;
-            }
-            std::cout << " ";
-        }
-        std::cout << "] " << int(progress * 100.0) << " %" << std::endl;
-        std::cout.flush();
-    }
-}
-
 void progress_bar(float progress, char symbol)
 {
     if (progress < 1.0) 
@@ -73,22 +45,9 @@ void progress_bar(float progress, char symbol)
     }
 }
 
-bool save_errors (string& ERR)
+void progress_bar(float progress)
 {
-    cerr << ERR << endl;
-    
-    ofstream output;
-    output.open("output/errors.txt", ios::app);
-
-    if (!output)
-    {
-        return false;
-    }
-
-    output << ERR << endl;
-    output.close();
-
-    return true;
+    progress_bar(progress, '=');
 }
 
 bool save_errors (string& ERR, string& out_file)
@@ -107,6 +66,12 @@ bool save_errors (string& ERR, string& out_file)
     output.close();
 
     return true;
+}
+
+bool save_errors (string& ERR)
+{
+    string of ("output/errors.txt");
+    return save_errors (ERR, of);
 }
 
 void get_json_from_url(string& url, Json::Value& obj)

@@ -29,19 +29,27 @@ int main(int argc, char** argv)
     vector<study*> studies = init(study_names, file_names);
     
     // fetches all the data from the dbSNP and ensembl databases and saves them
-    // the study objects
+    // to the study objects
     fetch_data_driver(studies);
 
-    // finds the intersection of the rsid matrixes
-    vector<comparison*> comparisons = compare_double_vector_driver(studies);
-
-    // saves the study objects and the intersections (comparisons)
-    output_csv(comparisons);
+    // saves the study objects
     output_csv(studies);
+
+    // finds the intersection of the rsid matrixes. No comparisons are made if
+    // only one file is given. 
+    if (file_names.size() > 1)
+    {
+        vector<comparison*> comparisons = compare_double_vector_driver(studies);
+        output_csv(comparisons);
+        del(comparisons);
+    }
+    else
+    {
+        cout << "Only one input given. No comparisons to be made." << endl;
+    }
     
     // clean up
     del(studies);
-    del(comparisons);
 
     cout << "...Program Ended" << endl;
     
