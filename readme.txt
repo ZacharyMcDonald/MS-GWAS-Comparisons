@@ -29,4 +29,17 @@ Expected output: study1_results.csv, study2_results.csv, study1study2_overlap.cs
 
 How the program works:
 
-TODO
+Data is read from the input csv file using a custom CSV API. All CSV data is stored 
+as a vector<vector<string>> typedefined as "matrix". RSID vectors are stored in
+the GWAS object (gwas_obj.cpp), each study is represented by a one GWAS object, then 
+each object is added to a vector. All objects are C-style heap allocated structs.
+The GWAS objects are passed into the fetch_data_driver function, this funtion
+handles are database calls to dbSNP and the various Ensembl databases. The main
+results are added to the 3-d vector because many data contain more than one value; 
+the myCSV api handles printing multiple values per cell with semicolons. The main
+results are exported to CSV, but the merged RSIDs are added to a 2-d matrix, where
+the first value is the original rsid followed by the megered RSIDs. All data thus 
+far has been stored in the GWAS objects, which are themselves stored in the a vector.
+The GWAS vector is then passed into compare_double_vector_driver(), which returns
+a vector of comparison objects that contain the overlap between all the of the 
+GWAS objects. Theses overlaps are stored as matrices which then saved as CSVs.
