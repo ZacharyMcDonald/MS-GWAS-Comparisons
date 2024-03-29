@@ -41,9 +41,8 @@ string get_gene_length(string& gene_name)
                        + " gene length: " + to_string(length) + "\n";
 
             cerr << ERR << endl;
-
-            string fn = "output/gene_length_errors.txt";
-            save_errors(ERR, fn);
+            
+            save_errors(ERR.c_str(), "output/gene_length_errors.txt");
         }
     }
 

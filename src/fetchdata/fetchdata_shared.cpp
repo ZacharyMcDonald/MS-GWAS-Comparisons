@@ -68,6 +68,13 @@ bool save_errors (string& ERR, string& out_file)
     return true;
 }
 
+bool save_errors(const char* ERR, const char* out_file)
+{
+    string E(ERR);
+    string O(out_file);
+    return save_errors(E, O);
+}
+
 bool save_errors (string& ERR)
 {
     string of ("output/errors.txt");

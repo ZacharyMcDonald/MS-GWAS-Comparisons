@@ -25,3 +25,4 @@
    
 
 bool save_errors (std::string& ERR, std::string& out_file);
+bool save_errors(const char* ERR, const char* out_file);

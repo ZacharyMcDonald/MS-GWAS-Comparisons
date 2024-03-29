@@ -1,0 +1,3 @@
+***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=rs6897932&rettype=json&retmode=text
+***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=rs3748817&rettype=json&retmode=text
+***ERROR*** Failed to retreive data from https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp&id=rs2104286&rettype=json&retmode=text

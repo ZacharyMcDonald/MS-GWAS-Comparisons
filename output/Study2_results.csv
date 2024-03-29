@@ -1,6 +1,4 @@
 Original RSID,All Merged RSIDs,Merged Dates,Revisions,Locus,Name,Orientation,Sequence Ontology,hg38 Position,Clinical,Gene Length,GRCh38,GRCh37,
-rs3748817,118134148,2010-08-16T13:01Z,132,MMEL1,membrane metalloendopeptidase like 1,minus,intron_variant,2594225,,42377,{1:2594226-2594226; HSCHR1_1_CTG3:2594226-2594226},1:2525665-2525665,
 rs3007421,{9435271; 60001030},{2004-09-24T19:37Z; 2008-05-25T20:51Z},{123; 130},PLEKHG5,pleckstrin homology and RhoGEF domain containing G5,minus,intron_variant,6470128,,52952,1:6470129-6470129,1:6530189-6530189,
 rs12087340,,,,,,,,85281309,,,1:85281310-85281310,1:85746993-85746993,
-rs2104286,{56454393; 57657975},{2008-05-24T10:36Z; 2009-02-26T21:14Z},{130; 130},IL2RA,interleukin 2 receptor subunit alpha,minus,intron_variant,6057081,,51681,10:6057082-6057082,10:6099045-6099045,
 rs11587876,60946983,2008-05-26T12:34Z,130,DDAH1,dimethylarginine dimethylaminohydrolase 1,minus,intron_variant,85449499,,259882,1:85449500-85449500,1:85915183-85915183,

@@ -1,7 +1,8 @@
+PROG_NAME = GwasDatabaseTool.exe
 CC = g++
 CFLAGS = -g -std=c++11 -Wall
 JFLAGS = -lcurl -ljsoncpp 
-DEBUG_RUN = gdb -q -ex run --args ./main.out input/small_test/small_test.csv
+DEBUG_RUN = gdb -q -ex run --args ./${PROG_NAME} input/small_test/small_test.csv
 OF = o_files/
 SC = src/
 HD = ${SC}headers
@@ -10,8 +11,8 @@ FD = ${SC}fetchdata/
 OBJ_FILES = ${OF}gwas_obj.o ${OF}compare_double_vector.o ${OF}myCSV.o ${OF}fetchdata_dbsnp.o ${OF}fetchdata_ensembl.o ${OF}fetchdata_shared.o ${OF}fetchdata_positions.o
 
 main: ${OBJ_FILES}
-	rm -f main.out
-	${CC} ${CFLAGS} ${SC}main.cpp ${OBJ_FILES} ${JFLAGS} -o main.out 
+	rm -f ${PROG_NAME}
+	${CC} ${CFLAGS} ${SC}main.cpp ${OBJ_FILES} ${JFLAGS} -o ${PROG_NAME} 
 	${DEBUG_RUN}
 
 ${OF}gwas_obj.o: ${SC}gwas_obj.cpp ${SC}gwas_obj.h
@@ -43,11 +44,11 @@ ${OF}fetchdata_positions.o: ${FD}fetchdata_positions.cpp ${FD}fetchdata_position
 	${CC} ${CFLAGS} -c ${FD}fetchdata_positions.cpp -o ${OF}fetchdata_positions.o
 
 clean: 
-	rm -f *.o *.gch main.out
+	rm -f *.o *.gch ${PROG_NAME}
 	rm ${OF}*
 
 run:
-	./main.out
+	./${PROG_NAME}
 
 valgrind:
-	valgrind --tool=memcheck --leak-check=yes ./main.out
+	valgrind --tool=memcheck --leak-check=yes ./${PROG_NAME} input/small_test/small_test.csv
