@@ -1,6 +1,6 @@
 PROG_NAME = GwasDatabaseTool.exe
 CC = g++
-CFLAGS = -g -std=c++11 -Wall
+CFLAGS = -g -std=c++11 -Wall -static-libgcc -static-libstdc++
 JFLAGS = -lcurl -ljsoncpp 
 DEBUG_RUN = gdb -q -ex run --args ./${PROG_NAME} input/small_test/small_test.csv
 OF = o_files/
@@ -13,7 +13,7 @@ OBJS = ${OF}gwas_obj.o ${OF}compare_double_vector.o ${OF}myCSV.o ${OF}fetchdata_
 main: ${OBJS}
 	rm -f ${PROG_NAME}
 	${CC} ${CFLAGS} ${SC}main.cpp ${OF}* ${JFLAGS} -o ${PROG_NAME} 
-	${DEBUG_RUN}
+	# ${DEBUG_RUN}
 
 ${OF}gwas_obj.o: ${SC}gwas_obj.cpp ${SC}gwas_obj.h
 	rm -f ${OF}gwas_obj.o
